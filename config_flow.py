@@ -8,25 +8,25 @@ class DeineIntegrationConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
         if user_input is not None:
             # Optional: Validierung, z. B. Seriennummer-Format prüfen
-            seriennummer = user_input["seriennummer"]
-            kennwort = user_input["kennwort"]
+            seriennummer = user_input["Seriennummer"]
+            kennwort = user_input["Kennwort"]
 
             # Beispielhafte Validierung
             if not seriennummer.isalnum():
-                errors["seriennummer"] = "ungültig"
+                errors["Seriennummer"] = "ungültig"
             elif len(kennwort) < 4:
-                errors["kennwort"] = "zu_kurz"
+                errors["Kennwort"] = "zu_kurz"
             else:
                 return self.async_create_entry(
-                    title=f"Gerät {seriennummer}",
+                    title=f"Gerät {Seriennummer}",
                     data=user_input
                 )
 
         return self.async_show_form(
             step_id="user",
             data_schema=vol.Schema({
-                vol.Required("seriennummer"): str,
-                vol.Required("kennwort"): str,
+                vol.Required("Seriennummer"): str,
+                vol.Required("Kennwort"): str,
             }),
             errors=errors,
         )
