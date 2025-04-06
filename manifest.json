@@ -1,0 +1,10 @@
+{
+  "domain": "solmate_eet",
+  "name": "Solmate Solar Panel Integration",
+  "version": "0.1",
+  "documentation": "https://www.kroesch.net/solmate",
+  "config_flow": true,
+  "dependencies": [],
+  "codeowners": ["@kkroesch"],
+  "requirements": []
+}
